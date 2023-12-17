@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&display=swap");
+
+
+:root {
+  --bg-color: #f2f0f0;
+  --container-bg: #fff;
+  --text-color: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Barlow", sans-serif;
+}
+
+body {
+  display: flex;
+  padding: 10px;
+  color: var(--text-color);
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color);
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header button {
+  font-size: 18px;
+  background-color: var(--container-bg);
+  margin: 0;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.container {
+  width: 850px;
+  padding: 35px;
+  background: var(--container-bg);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,.3);
+}
+
+.container.disable .edit-panel, .container.disable .reset-filter, .container.disable .save-img{
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.wrapper {
+  display: flex;
+  padding: 20px 0;
+}
+
+.edit-panel {
+  padding: 20px;
+  width: 280px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.edit-panel .title {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.edit-panel button {
+  outline: none;
+  height: 40px;
+  font-size: 14px;
+  color: #000;
+  background: #fff;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  border: 1px solid #aaa;
+}
+
+.edit-panel .filter button {
+  width: calc(100% / 2 - 4px);
+}
+
+.edit-panel button:hover {
+  background: #d8d8d8;
+}
+
+.edit-panel .rotate {
+  margin-top: 17px;
+}
+
+.edit-panel .rotate button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% / 4 - 3px);
+}
+
+.options, .controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.filter button.active {
+  color: #fff;
+  border-color: #5372F0;
+  background: #5372F0;
+}
+
+.slider {
+  margin-top: 12px;
+}
+
+.slider .filter-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.slider input {
+  width: 100%;
+  height: 5px;
+  accent-color: #5372F0;
+}
+
+.rotate .options button:active {
+  color: #fff;
+  background: #5372F0;
+  border-color: #5372F0;
+}
+
+.wrapper .preview-img {
+  flex-grow: 1;
+  display: flex;
+  overflow: hidden;
+  margin-right: 20px;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  max-width: 490px;
+  max-height: 335px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.controls button {
+  padding: 11px 20px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.reset-filter {
+  background: #f84848;
+  color: #fff;
+}
+
+.reset-filter:hover {
+  background: #9d2b2b;
+}
+
+.save-img {
+  margin-left: 5px;
+}
+
+.choose-img, .save-img {
+  background: #5372F0;
+  color: #fff;
+}
+
+.choose-img:hover, .save-img:hover {
+  background: #281e92;
+}
+
+@media screen and (max-width: 760px) {
+  .container {
+    padding: 25px;
+  }
+
+  .container .wrapper {
+    flex-wrap: wrap-reverse;
+  }
+
+  .wrapper .edit-panel {
+    width: 100%;
+  }
+
+  .wrapper .preview-img {
+    width: 100%;
+    margin: 15px 0 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .wrapper {
+    height: auto;
+  }
+
+  .controls button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .controls .row {
+    width: 100%;
+  }
+
+  .save-img {
+    margin-left: 0px;
+  }
+}
